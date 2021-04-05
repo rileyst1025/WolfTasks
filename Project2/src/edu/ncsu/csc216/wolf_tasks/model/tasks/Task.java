@@ -114,8 +114,12 @@ public class Task implements Cloneable{
 	/**
 	 * Clones the task
 	 * @return the cloned task
+	 * @throws CloneNotSupportedException if there are no AbstractTaskLists registered with the task
 	 */
-	public Task clone() {
+	public Task clone() throws CloneNotSupportedException {
+		if(taskLists.size() == 0) {
+			throw new CloneNotSupportedException();
+		}
 		return null;
 	}
 	
