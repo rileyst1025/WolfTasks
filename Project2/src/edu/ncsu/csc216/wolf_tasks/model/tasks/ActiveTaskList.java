@@ -2,14 +2,14 @@ package edu.ncsu.csc216.wolf_tasks.model.tasks;
 
 public class ActiveTaskList extends AbstractTaskList{
 	/** The name for ActiveTaskList */
-	private static final String ACTIVE_TASKS_NAME = "Active Tasks";
+	public static final String ACTIVE_TASKS_NAME = "Active Tasks";
 	
 	/**
 	 * Creates an ActiveTaskList with the name Active Tasks and the given completedCount
 	 * @param completedCount the completedCount to set
 	 */
-	public ActiveTaskList(int completedCount) {
-		super(ACTIVE_TASKS_NAME, completedCount);
+	public ActiveTaskList() {
+		super(ACTIVE_TASKS_NAME, 0);
 	}
 	/**
 	 * Adds the given task to the AbstractTaskList's tasks
