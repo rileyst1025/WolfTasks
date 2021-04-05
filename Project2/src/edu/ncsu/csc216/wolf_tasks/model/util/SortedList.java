@@ -3,9 +3,9 @@ package edu.ncsu.csc216.wolf_tasks.model.util;
 public class SortedList<E extends Comparable<E>> implements ISortedList{
 
 	/** The front of the list */
-	ListNode front;
+	private ListNode front;
 	/** The size of the list */
-	int size;
+	private int size;
 	
 	/**
 	 * Adds the element to the list in sorted order.
