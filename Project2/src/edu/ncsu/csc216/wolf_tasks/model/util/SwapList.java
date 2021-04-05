@@ -5,7 +5,7 @@ package edu.ncsu.csc216.wolf_tasks.model.util;
  * @author rsthoma5
  * @param <E> type for the SwapList
  */
-public class SwapList<E> implements ISwapList{
+public class SwapList<E> implements ISwapList<E>{
 
 	/** The initial capacity of a SwapList */
 	private static final int INITIAL_CAPACITY = 10;
@@ -31,7 +31,7 @@ public class SwapList<E> implements ISwapList{
 	 * 		for the list
 	 */
 	@Override
-	public Object remove(int idx) {
+	public E remove(int idx) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -117,7 +117,7 @@ public class SwapList<E> implements ISwapList{
 	 * @throws IllegalArgumentException if element cannot be added 
 	 */
 	@Override
-	public void add(Object element) {
+	public void add(E element) {
 		if(element == null) {
 			throw new IllegalArgumentException("Cannot add null element");
 		}

@@ -1,6 +1,6 @@
 package edu.ncsu.csc216.wolf_tasks.model.util;
 
-public class SortedList<E extends Comparable<E>> implements ISortedList{
+public class SortedList<E extends Comparable<E>> implements ISortedList<E>{
 
 	/** The front of the list */
 	private ListNode front;
@@ -14,7 +14,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList{
 	 * @throws IllegalArgumentException if element cannot be added 
 	 */
 	@Override
-	public void add(Comparable element) {
+	public void add(E element) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -28,7 +28,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList{
 	 * 		for the list
 	 */
 	@Override
-	public Comparable remove(int idx) {
+	public E remove(int idx) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -39,7 +39,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList{
 	 * @return true if element is found
 	 */
 	@Override
-	public boolean contains(Comparable element) {
+	public boolean contains(E element) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -52,7 +52,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList{
 	 * 		for the list
 	 */
 	@Override
-	public Comparable get(int idx) {
+	public E get(int idx) {
 		// TODO Auto-generated method stub
 		return null;
 	}
