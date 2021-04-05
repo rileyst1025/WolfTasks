@@ -68,7 +68,7 @@ public class Notebook {
 	 * Gets the names of all the TaskLists in the Notebook in a array
 	 * @return an array of all the names of all the TaskLists in the Notebook
 	 */
-	public String[] getTaskListNames() {
+	public String[] getTaskListsNames() {
 		return null;
 	}
 	/**

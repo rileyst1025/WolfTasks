@@ -9,7 +9,7 @@ public class NotebookReader {
 	 * @param filename the file to get the notebook from
 	 * @return the Notebook created from the file information
 	 */
-	public static Notebook readNotebookFile(File filename) {
+	public static Notebook readNodebookFile(File filename) {
 		return null;
 	}
 	/**

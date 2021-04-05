@@ -53,11 +53,11 @@ public abstract class AbstractTaskList {
 		
 	}
 	/**
-	 * Removes and returns the given task from the AbstractTaskList's tasks
-	 * @param task the task to remove
+	 * Removes and returns the task at the given index from the AbstractTaskList's tasks
+	 * @param idx the index of the task to remove
 	 * @return the task that was removed
 	 */
-	public Task removeTask(Task task) {
+	public Task removeTask(int idx) {
 		return null;
 	}
 	/**
