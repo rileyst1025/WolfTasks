@@ -1,6 +1,12 @@
 package edu.ncsu.csc216.wolf_tasks.model.util;
 
-public class SortedList<E extends Comparable<E>> implements ISortedList<E>{
+/**
+ * The SortedList class is an array based list, implements the ISortedList interface, and holds elements in a sorted order 
+ * @author rsthoma5
+ *
+ * @param <E> type for the SortedList
+ */
+public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 
 	/** The front of the list */
 	private ListNode front;

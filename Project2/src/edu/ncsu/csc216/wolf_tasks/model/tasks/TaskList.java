@@ -1,6 +1,11 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
 
-public class TaskList extends AbstractTaskList implements Comparable<TaskList>{
+/**
+ * The TaskList class is a subclass of AbstractTaskList and has added functionality to display the tasks in the list as well for comparing TaskLists
+ * @author rsthoma5
+ *
+ */
+public class TaskList extends AbstractTaskList implements Comparable<TaskList> {
 	
 	/**
 	 * Creates a new TaskList with the given taskListName and completedCount

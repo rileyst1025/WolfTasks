@@ -1,6 +1,12 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
 import edu.ncsu.csc216.wolf_tasks.model.util.ISwapList;
 
+/**
+ * The AbstractTaskList class holds a taskListName, a completedCountm and a SwapList of Tasks along with
+ * methods to manage the Tasks in the list
+ * @author rsthoma5
+ *
+ */
 public abstract class AbstractTaskList {
 	/** The name of the TaskList */
 	private String taskListName;

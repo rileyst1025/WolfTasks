@@ -1,7 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
 import edu.ncsu.csc216.wolf_tasks.model.util.ISwapList;
 
-public class Task implements Cloneable{
+/**
+ * The Task class represents a task and holds a taskName, taskDescription, and checkers to if the task is recurring or not as well
+ * as methods for editing, completing, and cloning a task
+ * @author rsthoma5
+ *
+ */
+public class Task implements Cloneable {
 	/** The name of the task */
 	private String taskName;
 	/** The description of the task */

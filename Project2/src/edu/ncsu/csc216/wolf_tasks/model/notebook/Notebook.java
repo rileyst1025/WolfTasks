@@ -1,8 +1,17 @@
 package edu.ncsu.csc216.wolf_tasks.model.notebook;
 import java.io.File;
-import edu.ncsu.csc216.wolf_tasks.model.tasks.*;
-import edu.ncsu.csc216.wolf_tasks.model.util.*;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.AbstractTaskList;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.ActiveTaskList;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.Task;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.TaskList;
+import edu.ncsu.csc216.wolf_tasks.model.util.ISortedList;
 
+/**
+ * The Notebook class has a notebookName, a list of taskLists, an active task list, a current task list, and a method for adding,
+ * removing, and editing Tasks and TaskLists
+ * @author rsthoma5
+ *
+ */
 public class Notebook {
 	/** The list of TaskLists in the notebook */
 	private ISortedList<TaskList> taskLists;

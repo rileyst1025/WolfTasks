@@ -1,8 +1,15 @@
 package edu.ncsu.csc216.wolf_tasks.model.io;
 import java.io.File;
 import edu.ncsu.csc216.wolf_tasks.model.notebook.Notebook;
-import edu.ncsu.csc216.wolf_tasks.model.tasks.*;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.AbstractTaskList;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.Task;
+import edu.ncsu.csc216.wolf_tasks.model.tasks.TaskList;
 
+/**
+ * The NotebookReader class holds the functionality for creating a Notebook out of the information in a given file
+ * @author rsthoma5
+ *
+ */
 public class NotebookReader {
 	/**
 	 * Gets a notebook from the given file

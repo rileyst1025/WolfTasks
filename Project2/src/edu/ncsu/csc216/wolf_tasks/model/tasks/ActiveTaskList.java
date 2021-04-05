@@ -1,12 +1,16 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
 
-public class ActiveTaskList extends AbstractTaskList{
+/**
+ * The ActiveTaskList class is a subclass of AbstractTaskList that holds tasks marks as active with the taskListName "Active Tasks"
+ * @author rsthoma5
+ *
+ */
+public class ActiveTaskList extends AbstractTaskList {
 	/** The name for ActiveTaskList */
 	public static final String ACTIVE_TASKS_NAME = "Active Tasks";
 	
 	/**
 	 * Creates an ActiveTaskList with the name Active Tasks and the given completedCount
-	 * @param completedCount the completedCount to set
 	 */
 	public ActiveTaskList() {
 		super(ACTIVE_TASKS_NAME, 0);
