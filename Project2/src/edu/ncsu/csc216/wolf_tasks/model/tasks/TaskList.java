@@ -27,7 +27,7 @@ public class TaskList extends AbstractTaskList implements Comparable<TaskList> {
 	}
 	/**
 	 * Compares the names of the TaskLists
-	 * @param the TaskList to compare the TaskList to
+	 * @param list the TaskList to compare the TaskList to
 	 * @return 1 if the given TaskList's name if more than the TaskList, -1 if the opposite is true, and 0 if they are the same name
 	 */
 	@Override
