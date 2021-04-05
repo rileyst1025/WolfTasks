@@ -1,9 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.notebook;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The NotebookTest class tests that all of Notebook's methods work correctly
+ * @author rsthoma5
+ *
+ */
 public class NotebookTest {
 	/**
 	 * Tests that the Notebook constructor works correctly

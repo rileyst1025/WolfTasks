@@ -1,9 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The AbstractTaskListTest class tests that AbstractTaskList correctly holds and manages Tasks
+ * @author rsthoma5
+ *
+ */
 public class AbstractTaskListTest {
 	/**
 	 * Tests that the AbstractTaskList constructor works correctly

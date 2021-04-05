@@ -1,9 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The ActiveTaskListTest class tests that ActiveTaskList holds the correct functionality for an active task list
+ * @author rsthoma5
+ *
+ */
 public class ActiveTaskListTest {
 	/**
 	 * Tests that the ActiveTaskList constructor works correctly

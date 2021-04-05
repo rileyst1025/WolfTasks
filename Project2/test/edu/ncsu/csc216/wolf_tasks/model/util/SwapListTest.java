@@ -1,9 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.util;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The SwapListTest class tests that SwapList correctly stores and moves its elements
+ * @author rsthoma5
+ *
+ */
 public class SwapListTest {
 	/**
 	 * Tests that the SwapList constrcutor works correctly

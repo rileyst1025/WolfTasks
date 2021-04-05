@@ -1,9 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The TaskTest class tests that all of Task's methods work correctly
+ * @author rsthoma5
+ *
+ */
 public class TaskTest {
 	/**
 	 * Tests that the Task constructor works correctly

@@ -1,9 +1,13 @@
 package edu.ncsu.csc216.wolf_tasks.model.util;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * The SortedListTest class test that SortedList maintains a correctly sorted list of elements 
+ * @author rsthoma5
+ *
+ */
 public class SortedListTest {
 	/**
 	 * Tests that the SortedList constructor works correctly
