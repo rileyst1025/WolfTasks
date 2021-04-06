@@ -47,7 +47,7 @@ public class SwapListTest {
 		try {
 			s.add(null);
 			fail();
-		} catch(IllegalArgumentException e) {
+		} catch(NullPointerException e) {
 			assertEquals(11, s.size());
 		}
 	}

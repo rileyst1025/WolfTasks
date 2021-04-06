@@ -151,7 +151,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public void add(E element) {
 		if(element == null) {
-			throw new IllegalArgumentException("Cannot add null element");
+			throw new NullPointerException("Cannot add null element");
 		}
 		checkCapacity();
 		list[size] = element;

@@ -14,6 +14,13 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	private int size;
 	
 	/**
+	 * Creates an empty SortedList
+	 */
+	public SortedList() {
+		front = null;
+		size = 0;
+	}
+	/**
 	 * Adds the element to the list in sorted order.
 	 * @param element element to add
 	 * @throws NullPointerException if element is null
@@ -21,8 +28,42 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	 */
 	@Override
 	public void add(E element) {
-		// TODO Auto-generated method stub
-		
+		if(element == null) {
+			throw new NullPointerException("Cannot add null element");
+		}
+		if(size == 0) {
+			ListNode addNode = new ListNode(element, null);
+			front = addNode;
+			size++;
+		}
+		else {
+			if(contains(element)) {
+				throw new IllegalArgumentException("Cannot add duplicate element");
+			}
+			ListNode current = front;
+			boolean hasAdded = false;
+			if(element.compareTo(current.data) < 0) {
+				ListNode addNode = new ListNode(element, front);
+				front = addNode;
+				hasAdded = true;
+			}
+			if(!hasAdded) {
+				while(!(current.next == null)) {
+					if(element.compareTo(current.next.data) < 0) {
+						ListNode addNode = new ListNode(element, current.next);
+						current.next = addNode;
+						hasAdded = true;
+						break;
+					}
+					current = current.next;
+				}
+			}
+			if(!hasAdded) {
+				ListNode addNode = new ListNode(element, null);
+				current.next = addNode;
+			}
+			size++;
+		}
 	}
 
 	/**
@@ -35,8 +76,37 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	 */
 	@Override
 	public E remove(int idx) {
-		// TODO Auto-generated method stub
-		return null;
+		if(idx < 0 || idx >= size || size == 0) {
+			throw new IllegalArgumentException("Invalid Index");
+		}
+		if(idx == 0) {
+			E rtn = front.data;
+			if(size > 1) {
+				front = front.next;
+				size--;
+				return rtn;
+			}
+			front = null;
+			size--;
+			return rtn;
+		}
+		ListNode current = front;
+		if(idx == size - 1) {
+			for(int i = 0; i < size - 2; i++) {
+				current = current.next;
+			}
+			E rtn = current.next.data;
+			current.next = null;
+			size--;
+			return rtn;
+		}
+		for(int i = 0; i < idx - 1; i++) {
+			current = current.next;
+		}
+		E rtn = current.next.data;
+		current.next = current.next.next;
+		size--;
+		return rtn;
 	}
 
 	/**
@@ -46,7 +116,13 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	 */
 	@Override
 	public boolean contains(E element) {
-		// TODO Auto-generated method stub
+		ListNode current = front;
+		while(!(current.next == null)) {
+			if(current.data.compareTo(element) == 0){
+				return true;
+			}
+			current = current.next;
+		}
 		return false;
 	}
 
@@ -59,8 +135,14 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	 */
 	@Override
 	public E get(int idx) {
-		// TODO Auto-generated method stub
-		return null;
+		if(idx < 0 || idx >= size || size == 0) {
+			throw new IllegalArgumentException("Invalid Index");
+		}
+		ListNode current = front;
+		for(int i = 0; i < idx; i++) {
+			current = current.next;
+		}
+		return current.data;
 	}
 
 	/**
@@ -69,8 +151,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	/**
@@ -89,7 +170,8 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 		 * @param next the next ListNode in the list
 		 */
 		private ListNode(E data, ListNode next) {
-			
+			this.data = data;
+			this.next = next;
 		}
 	}
 }

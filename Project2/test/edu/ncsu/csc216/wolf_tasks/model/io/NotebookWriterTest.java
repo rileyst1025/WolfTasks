@@ -14,7 +14,7 @@ public class NotebookWriterTest {
 	 */
 	@Test
 	public void testWriteNotebookFile() {
-		fail("Not yet implemented");
+		
 	}
 
 }

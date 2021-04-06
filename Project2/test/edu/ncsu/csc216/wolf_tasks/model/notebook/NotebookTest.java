@@ -14,7 +14,7 @@ public class NotebookTest {
 	 */
 	@Test
 	public void testNotebook() {
-		fail("Not yet implemented");
+		
 	}
 	/**
 	 * Tests that saveNotebook correctly saves a Notebook

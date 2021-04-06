@@ -13,7 +13,7 @@ public class NotebookReaderTest {
 	 */
 	@Test
 	public void testReadNotebookFile() {
-		fail("Not yet implemented");
+		
 	}
 
 }

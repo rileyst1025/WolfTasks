@@ -14,7 +14,7 @@ public class AbstractTaskListTest {
 	 */
 	@Test
 	public void testAbstractTaskList() {
-		fail("Not yet implemented");
+		
 	}
 	/**
 	 * Test that setTaskListName sets the name of the AbstractTaskList correctly

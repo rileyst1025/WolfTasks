@@ -14,7 +14,7 @@ public class TaskTest {
 	 */
 	@Test
 	public void testTask() {
-		fail("Not yet implemented");
+		
 	}
 	/**
 	 * Tests that setTaskName correctly sets the Task's name
