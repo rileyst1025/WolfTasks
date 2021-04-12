@@ -1,5 +1,6 @@
 package edu.ncsu.csc216.wolf_tasks.model.tasks;
 import edu.ncsu.csc216.wolf_tasks.model.util.ISwapList;
+import edu.ncsu.csc216.wolf_tasks.model.util.SwapList;
 
 /**
  * The AbstractTaskList class holds a taskListName, a completedCountm and a SwapList of Tasks along with
@@ -21,7 +22,12 @@ public abstract class AbstractTaskList {
 	 * @param completedCount the completedCount to set for the AbstactTaskList
 	 */
 	public AbstractTaskList(String taskListName, int completedCount) {
-		
+		setTaskListName(taskListName);
+		if(completedCount < 0) {
+			throw new IllegalArgumentException("Invalid completed count.");
+		}
+		this.completedCount = completedCount;
+		tasks = new SwapList<Task>();
 	}
 	/**
 	 * Gets the name of the AbstactTaskList
@@ -35,7 +41,10 @@ public abstract class AbstractTaskList {
 	 * @param name the taskListName to set
 	 */
 	public void setTaskListName(String name) {
-		
+		if(name == null || "".equals(name)) {
+			throw new IllegalArgumentException("Invalid name.");
+		}
+		taskListName = name;
 	}
 	/**
 	 * Gets the ISwapList of Tasks for the AbstractTaskList
@@ -56,7 +65,8 @@ public abstract class AbstractTaskList {
 	 * @param task the task to add
 	 */
 	public void addTask(Task task) {
-		
+		tasks.add(task);
+		task.addTaskList(this);
 	}
 	/**
 	 * Removes and returns the task at the given index from the AbstractTaskList's tasks
@@ -64,7 +74,7 @@ public abstract class AbstractTaskList {
 	 * @return the task that was removed
 	 */
 	public Task removeTask(int idx) {
-		return null;
+		return tasks.remove(idx);
 	}
 	/**
 	 * Gets the task at the given index in the AbstractTaskList's tasks
@@ -72,14 +82,19 @@ public abstract class AbstractTaskList {
 	 * @return the Task at the index in the AbstractTaskList's tasks
 	 */
 	public Task getTask(int index) {
-		return null;
+		return tasks.get(index);
 	}
 	/**
 	 * Completes the given Task in the AbstractTaskList
 	 * @param task the Task to complete
 	 */
 	public void completeTask(Task task) {
-		
+		for(int i = 0; i < tasks.size(); i++) {
+			if(tasks.get(i) == task) {
+				tasks.remove(i);
+				completedCount++;
+			}
+		}
 	}
 	/**
 	 * Gets the AbstractTaskList's tasks as a 2D array

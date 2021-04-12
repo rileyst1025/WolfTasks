@@ -14,7 +14,6 @@ public class TaskList extends AbstractTaskList implements Comparable<TaskList> {
 	 */
 	public TaskList(String taskListName, int completedCount) {
 		super(taskListName, completedCount);
-		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * Gets the TaskList's tasks as a 2D array
@@ -22,17 +21,20 @@ public class TaskList extends AbstractTaskList implements Comparable<TaskList> {
 	 */
 	@Override
 	public String[][] getTasksAsArray() {
-		// TODO Auto-generated method stub
-		return null;
+		String[][] rtn = new String[getTasks().size()][2];
+		for(int i = 0; i < getTasks().size(); i++) {
+			rtn[i][0] = String.valueOf(i + 1);
+			rtn[i][1] = getTasks().get(i).getTaskName();
+		}
+		return rtn;
 	}
 	/**
 	 * Compares the names of the TaskLists
 	 * @param list the TaskList to compare the TaskList to
-	 * @return 1 if the given TaskList's name if more than the TaskList, -1 if the opposite is true, and 0 if they are the same name
+	 * @return -1 if the given TaskList's name if more than the TaskList, 1 if the opposite is true, and 0 if they are the same name
 	 */
 	@Override
 	public int compareTo(TaskList list) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.getTaskListName().compareTo(list.getTaskListName());
 	}
 }
