@@ -29,7 +29,7 @@ public class Task implements Cloneable {
 	 */
 	public Task(String taskName, String taskDetails, boolean recurring, boolean active) {
 		setTaskName(taskName);
-		setTaskDescription(taskDescription);
+		setTaskDescription(taskDetails);
 		setRecurring(recurring);
 		setActive(active);
 		taskLists = new SwapList<AbstractTaskList>();
@@ -50,7 +50,7 @@ public class Task implements Cloneable {
 	 */
 	public void setTaskName(String taskName) {
 		if(taskName == null || "".equals(taskName)) {
-			throw new IllegalArgumentException("Incomplete Task Information");
+			throw new IllegalArgumentException("Incomplete task information");
 		}
 		this.taskName = taskName;
 	}
@@ -69,7 +69,7 @@ public class Task implements Cloneable {
 	 */
 	public void setTaskDescription(String taskDescription) {
 		if(taskDescription == null || "".equals(taskDescription)) {
-			throw new IllegalArgumentException("Incomplete Task Information");
+			throw new IllegalArgumentException("Incomplete task information");
 		}
 		this.taskDescription = taskDescription;
 	}
@@ -111,7 +111,7 @@ public class Task implements Cloneable {
 	 * @return the name of the task's TaskList
 	 */
 	public String getTaskListName() {
-		if(taskLists.get(0) == null || taskLists.size() == 0) {
+		if(taskLists.size() == 0 || taskLists.get(0) == null) {
 			return "";
 		}
 		return taskLists.get(0).getTaskListName();
@@ -171,6 +171,14 @@ public class Task implements Cloneable {
 	 * @return the Task's info 
 	 */
 	public String toString() {
-		return null;
+		String rtn = taskName;
+		if(recurring) {
+			rtn += ",recurring";
+		}
+		if(active) {
+			rtn += ",active";
+		}
+		rtn += "/n" + taskDescription;
+		return rtn;
 	}
 }
