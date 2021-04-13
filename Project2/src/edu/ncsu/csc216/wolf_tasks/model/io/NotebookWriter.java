@@ -23,7 +23,7 @@ public class NotebookWriter {
 			PrintStream fileWriter = new PrintStream(filename);
 			fileWriter.println("! " + notebookName);
 			for(int i = 0; i < taskLists.size(); i++) {
-				fileWriter.println("# " + taskLists.get(i).getTaskListName());
+				fileWriter.println("# " + taskLists.get(i).getTaskListName() + "," + taskLists.get(i).getCompletedCount());
 				for(int j = 0; j < taskLists.get(i).getTasks().size(); j++) {
 					fileWriter.println("* " + taskLists.get(i).getTask(j).toString());
 				}

@@ -178,7 +178,7 @@ public class Task implements Cloneable {
 		if(active) {
 			rtn += ",active";
 		}
-		rtn += "/n" + taskDescription;
+		rtn += "\n" + taskDescription;
 		return rtn;
 	}
 }
