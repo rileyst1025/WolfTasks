@@ -44,25 +44,25 @@ public class TaskTest {
 			i = new Task("", "description", true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
-			assertEquals("Incomplete task information", e.getMessage());
+			assertEquals("Incomplete task information.", e.getMessage());
 		}
 		try {
 			i = new Task(null, "description", true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
-			assertEquals("Incomplete task information", e.getMessage());
+			assertEquals("Incomplete task information.", e.getMessage());
 		}
 		try {
 			i = new Task("name", "", true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
-			assertEquals("Incomplete task information", e.getMessage());
+			assertEquals("Incomplete task information.", e.getMessage());
 		}
 		try {
 			i = new Task("name", null, true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
-			assertEquals("Incomplete task information", e.getMessage());
+			assertEquals("Incomplete task information.", e.getMessage());
 		}
 	}
 	/**

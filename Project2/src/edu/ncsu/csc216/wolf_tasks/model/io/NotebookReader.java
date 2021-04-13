@@ -41,14 +41,15 @@ public class NotebookReader {
 			for(int i = 0; i < taskListTokens.length; i++) {
 				String[] taskTokens = taskListTokens[i].split("\\r?\\n[*]");
 				try {
-					rtn.addTaskList(processTaskList(taskTokens[0]));
+					TaskList addlist = processTaskList(taskTokens[0]);
 					for(int j = 1; j < taskTokens.length; j++) {
 						try {
-							processTask(rtn.getCurrentTaskList(), taskTokens[j]);
+							processTask(addlist, taskTokens[j]);
 						} catch(IllegalArgumentException x2) {
 							//Skip line of code, invalid line
 						}
 					}
+					rtn.addTaskList(addlist);
 				} catch(IllegalArgumentException x) {
 					//Skip line of code, invalid line
 				}
