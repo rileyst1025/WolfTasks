@@ -48,7 +48,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 				hasAdded = true;
 			}
 			if(!hasAdded) {
-				while(!(current.next == null)) {
+				while(current.next != null) {
 					if(element.compareTo(current.next.data) < 0) {
 						ListNode addNode = new ListNode(element, current.next);
 						current.next = addNode;
@@ -117,7 +117,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	@Override
 	public boolean contains(E element) {
 		ListNode current = front;
-		while(!(current.next == null)) {
+		while(current.next != null) {
 			if(current.data.compareTo(element) == 0){
 				return true;
 			}
