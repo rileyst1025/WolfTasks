@@ -70,7 +70,7 @@ public class NotebookReader {
 		if(taskListParams.length != 2) {
 			throw new IllegalArgumentException();
 		}
-		TaskList rtn = new TaskList(taskListParams[0].trim(), Integer.parseInt(taskListParams[1]));
+		TaskList rtn = new TaskList(taskListParams[0].substring(1), Integer.parseInt(taskListParams[1]));
 		return rtn;
 	}
 	/**
@@ -89,16 +89,16 @@ public class NotebookReader {
 			taskDescription += taskDetails[i] + "\n";
 		}
 		if(taskParams.length == 1) {
-			rtn = new Task(taskParams[0], taskDescription, false, false);
+			rtn = new Task(taskParams[0].substring(1), taskDescription, false, false);
 		}
 		else if(taskParams.length == 2 && "recurring".equals(taskParams[1])) {
-			rtn = new Task(taskParams[0], taskDescription, true, false);
+			rtn = new Task(taskParams[0].substring(1), taskDescription, true, false);
 		}
 		else if(taskParams.length == 2 && "active".equals(taskParams[1])) {
-			rtn = new Task(taskParams[0], taskDescription, false, true);
+			rtn = new Task(taskParams[0].substring(1), taskDescription, false, true);
 		}
 		else if(taskParams.length == 3 && ("recurring".equals(taskParams[1]) && "active".equals(taskParams[2]) || "recurring".equals(taskParams[2]) && "active".equals(taskParams[1]))) {
-			rtn = new Task(taskParams[0], taskDescription, true, true);
+			rtn = new Task(taskParams[0].substring(1), taskDescription, true, true);
 		}
 		else {
 			throw new IllegalArgumentException();
