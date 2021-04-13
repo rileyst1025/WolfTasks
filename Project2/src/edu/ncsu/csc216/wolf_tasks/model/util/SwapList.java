@@ -36,8 +36,8 @@ public class SwapList<E> implements ISwapList<E> {
 			throw new IndexOutOfBoundsException("Invalid Index");
 		}
 		E rtn = get(idx);
-		for(int i = idx; i < size-1; i++) {
-			list[i] = list[i+1];
+		for(int i = idx; i < size - 1; i++) {
+			list[i] = list[i + 1];
 		}
 		size--;
 		return rtn;

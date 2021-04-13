@@ -37,7 +37,7 @@ public class Notebook {
 		activeTaskList = new ActiveTaskList();
 		currentTaskList = activeTaskList;
 		setChanged(true);
-		if(name == null || "".equals(name) ||name.equals(activeTaskList.getTaskListName())) {
+		if(name == null || "".equals(name) || name.equals(activeTaskList.getTaskListName())) {
 			throw new IllegalArgumentException();
 		}
 		setNotebookName(name);

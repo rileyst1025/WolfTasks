@@ -145,7 +145,9 @@ public class Task implements Cloneable {
 			if(recurring) {
 				try {
 					taskLists.get(i).addTask(this.clone());
-				} catch(CloneNotSupportedException e) {}
+				} catch(CloneNotSupportedException e) {
+					throw new IllegalArgumentException();
+				}
 			}
 		}
 	}
