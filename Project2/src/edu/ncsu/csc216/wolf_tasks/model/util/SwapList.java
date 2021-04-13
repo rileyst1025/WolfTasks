@@ -33,7 +33,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public E remove(int idx) {
 		if(idx >= size || idx < 0 || size == 0) {
-			throw new IndexOutOfBoundsException("Invalid Index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		E rtn = get(idx);
 		for(int i = idx; i < size - 1; i++) {
@@ -53,7 +53,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public void moveUp(int idx) {
 		if(idx >= size || idx < 0 || size == 0) {
-			throw new IndexOutOfBoundsException("Invalid Index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		if(idx > 0) {
 			E temp = list[idx];
@@ -72,7 +72,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public void moveDown(int idx) {
 		if(idx >= size || idx < 0 || size == 0) {
-			throw new IndexOutOfBoundsException("Invalid Index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		if(idx < size - 1) {
 			E temp = list[idx];
@@ -91,7 +91,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public void moveToFront(int idx) {
 		if(idx >= size || idx < 0 || size == 0) {
-			throw new IndexOutOfBoundsException("Invalid Index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		E front = list[idx];
 		for(int i = idx; i > 0; i--) {
@@ -110,7 +110,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public void moveToBack(int idx) {
 		if(idx >= size || idx < 0 || size == 0) {
-			throw new IndexOutOfBoundsException("Invalid Index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		E back = list[idx];
 		for(int i = idx; i < size - 1; i++) {
@@ -129,7 +129,7 @@ public class SwapList<E> implements ISwapList<E> {
 	@Override
 	public E get(int idx) {
 		if(idx >= size || idx < 0 || size == 0) {
-			throw new IndexOutOfBoundsException("Invalid Index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		return list[idx];
 	}
