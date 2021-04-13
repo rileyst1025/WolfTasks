@@ -37,7 +37,7 @@ public class Notebook {
 		activeTaskList = new ActiveTaskList();
 		currentTaskList = activeTaskList;
 		setChanged(true);
-		if(name == null || name.equals(activeTaskList.getTaskListName())) {
+		if(name == null || "".equals(name) ||name.equals(activeTaskList.getTaskListName())) {
 			throw new IllegalArgumentException();
 		}
 		setNotebookName(name);
@@ -94,6 +94,7 @@ public class Notebook {
 		}
 		taskLists.add(taskList);
 		currentTaskList = taskList;
+		getActiveTaskList();
 		setChanged(true);
 	}
 	/**
@@ -175,6 +176,7 @@ public class Notebook {
 			}
 		}
 		currentTaskList = activeTaskList;
+		getActiveTaskList();
 		setChanged(true);
 	}
 	/**
@@ -204,9 +206,7 @@ public class Notebook {
 			currentTaskList.getTask(idx).setTaskDescription(taskDescription);
 			currentTaskList.getTask(idx).setRecurring(recurring);
 			currentTaskList.getTask(idx).setActive(active);
-			if(active) {
-				getActiveTaskList();
-			}
+			getActiveTaskList();
 			setChanged(true);
 		}
 	}
