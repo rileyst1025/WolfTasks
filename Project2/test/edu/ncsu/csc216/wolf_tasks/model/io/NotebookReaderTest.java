@@ -76,5 +76,10 @@ public class NotebookReaderTest {
 		n.setCurrentTaskList("Habits");
 		assertEquals(3, n.getCurrentTaskList().getCompletedCount());
 		assertEquals(1, n.getCurrentTaskList().getTasks().size());
+		try {
+			n = NotebookReader.readNodebookFile(new File("notfile.xy"));
+		} catch(IllegalArgumentException e) {
+			assertEquals("Unable to load file.", e.getMessage());
+		}
 	}
 }
