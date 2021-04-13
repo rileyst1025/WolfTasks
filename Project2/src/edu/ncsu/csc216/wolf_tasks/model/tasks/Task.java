@@ -69,7 +69,7 @@ public class Task implements Cloneable {
 	 */
 	public void setTaskDescription(String taskDescription) {
 		if(taskDescription == null || "".equals(taskDescription)) {
-			throw new IllegalArgumentException("Incomplete task information.");
+			throw new IllegalArgumentException("Incomplete task information");
 		}
 		this.taskDescription = taskDescription;
 	}
