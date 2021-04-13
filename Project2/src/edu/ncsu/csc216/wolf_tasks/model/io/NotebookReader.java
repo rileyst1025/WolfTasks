@@ -97,7 +97,7 @@ public class NotebookReader {
 		else if(taskParams.length == 2 && "active".equals(taskParams[1])) {
 			rtn = new Task(taskParams[0], taskDescription, false, true);
 		}
-		else if(taskParams.length == 3 && "recurring".equals(taskParams[1]) && "active".equals(taskParams[2])) {
+		else if(taskParams.length == 3 && ("recurring".equals(taskParams[1]) && "active".equals(taskParams[2])) || ("recurring".equals(taskParams[2]) && "active".equals(taskParams[1]))) {
 			rtn = new Task(taskParams[0], taskDescription, true, true);
 		}
 		else {

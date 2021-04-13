@@ -38,7 +38,9 @@ public class NotebookReaderTest {
 		assertEquals(5, n.getCurrentTaskList().getTasks().size());
 		n.setCurrentTaskList("Habits");
 		assertEquals(0, n.getCurrentTaskList().getCompletedCount());
-		assertEquals(1, n.getCurrentTaskList().getTasks().size());
+		assertEquals(2, n.getCurrentTaskList().getTasks().size());
+		n.setCurrentTaskList("Active Tasks");
+		assertEquals(5, n.getCurrentTaskList().getTasks().size());
 		n = NotebookReader.readNodebookFile(missingitemsFile);
 		assertEquals("School", n.getNotebookName());
 		assertEquals("CSC 216", n.getTaskListsNames()[1]);
@@ -52,7 +54,7 @@ public class NotebookReaderTest {
 		assertEquals(4, n.getCurrentTaskList().getTasks().size());
 		n.setCurrentTaskList("Habits");
 		assertEquals(0, n.getCurrentTaskList().getCompletedCount());
-		assertEquals(1, n.getCurrentTaskList().getTasks().size());
+		assertEquals(2, n.getCurrentTaskList().getTasks().size());
 		try {
 			n = NotebookReader.readNodebookFile(errorFile);
 			fail();
@@ -73,6 +75,6 @@ public class NotebookReaderTest {
 		assertEquals("Habits", n.getTaskListsNames()[1]);
 		n.setCurrentTaskList("Habits");
 		assertEquals(3, n.getCurrentTaskList().getCompletedCount());
-		assertEquals(1, n.getCurrentTaskList().getTasks().size());
+		assertEquals(2, n.getCurrentTaskList().getTasks().size());
 	}
 }
