@@ -156,7 +156,7 @@ public class Notebook {
 			}
 		}
 		if(currentTaskList.getTaskListName().equals(activeTaskList.getTaskListName())) {
-			throw new IllegalArgumentException("Invalid name.");
+			throw new IllegalArgumentException("The Active Tasks list may not be edited.");
 		}
 		TaskList temp = (TaskList) currentTaskList;
 		removeTaskList();
