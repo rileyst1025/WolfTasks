@@ -41,7 +41,7 @@ public abstract class AbstractTaskList {
 	 * @param name the taskListName to set
 	 */
 	public void setTaskListName(String name) {
-		if(name == null || "".equals(name)) {
+		if(name == null || "".equals(name.trim())) {
 			throw new IllegalArgumentException("Invalid name.");
 		}
 		taskListName = name;

@@ -49,7 +49,7 @@ public class Task implements Cloneable {
 	 * @throws IllegalArgumentException if given name is null or empty
 	 */
 	public void setTaskName(String taskName) {
-		if(taskName == null || "".equals(taskName)) {
+		if(taskName == null || "".equals(taskName.trim())) {
 			throw new IllegalArgumentException("Incomplete task information.");
 		}
 		this.taskName = taskName;

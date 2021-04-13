@@ -75,6 +75,6 @@ public class NotebookReaderTest {
 		assertEquals("Habits", n.getTaskListsNames()[1]);
 		n.setCurrentTaskList("Habits");
 		assertEquals(3, n.getCurrentTaskList().getCompletedCount());
-		assertEquals(2, n.getCurrentTaskList().getTasks().size());
+		assertEquals(1, n.getCurrentTaskList().getTasks().size());
 	}
 }
