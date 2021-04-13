@@ -146,7 +146,7 @@ public class Task implements Cloneable {
 				try {
 					taskLists.get(i).addTask(this.clone());
 				} catch(CloneNotSupportedException e) {
-					throw new IllegalArgumentException();
+					throw new IllegalArgumentException("Cannot clone.");
 				}
 			}
 		}
@@ -159,7 +159,7 @@ public class Task implements Cloneable {
 	 */
 	public Task clone() throws CloneNotSupportedException {
 		if(taskLists.size() == 0) {
-			throw new CloneNotSupportedException();
+			throw new CloneNotSupportedException("Cannot clone.");
 		}
 		Task cloneTask = new Task(taskName, taskDescription, recurring, active);
 		for(int i = 0; i < taskLists.size(); i++) {
