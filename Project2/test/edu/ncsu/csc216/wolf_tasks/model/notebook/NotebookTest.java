@@ -153,5 +153,57 @@ public class NotebookTest {
 		n.editTask(1, "name1", "dsecription1", false, true);
 		n.setCurrentTaskList("Active Tasks");
 		assertEquals(1, n.getCurrentTaskList().getTasks().size());
+		Notebook ts = new Notebook("tsTests");
+		assertEquals(1, ts.getTaskListsNames().length);
+		assertEquals("Active Tasks", ts.getTaskListsNames()[0]);
+		assertEquals("Active Tasks", ts.getCurrentTaskList().getTaskListName());
+		TaskList tstl1 = new TaskList("TaskList1", 0);
+		ts.addTaskList(tstl1);
+		assertEquals(2, ts.getTaskListsNames().length);
+		assertEquals("Active Tasks", ts.getTaskListsNames()[0]);
+		assertEquals("TaskList1", ts.getTaskListsNames()[1]);
+		assertEquals("TaskList1", ts.getCurrentTaskList().getTaskListName());
+		TaskList atstl = new TaskList("ATaskList", 0);
+		ts.addTaskList(atstl);
+		assertEquals(3, ts.getTaskListsNames().length);
+		assertEquals("Active Tasks", ts.getTaskListsNames()[0]);
+		assertEquals("ATaskList", ts.getTaskListsNames()[1]);
+		assertEquals("TaskList1", ts.getTaskListsNames()[2]);
+		assertEquals("ATaskList", ts.getCurrentTaskList().getTaskListName());
+		TaskList mtstl = new TaskList("MiddleTaskList", 0);
+		ts.addTaskList(mtstl);
+		assertEquals(4, ts.getTaskListsNames().length);
+		assertEquals("Active Tasks", ts.getTaskListsNames()[0]);
+		assertEquals("ATaskList", ts.getTaskListsNames()[1]);
+		assertEquals("MiddleTaskList", ts.getTaskListsNames()[2]);
+		assertEquals("TaskList1", ts.getTaskListsNames()[3]);
+		assertEquals("MiddleTaskList", ts.getCurrentTaskList().getTaskListName());
+		TaskList ztstl = new TaskList("ZZZTaskList", 0);
+		ts.addTaskList(ztstl);
+		assertEquals(5, ts.getTaskListsNames().length);
+		assertEquals("Active Tasks", ts.getTaskListsNames()[0]);
+		assertEquals("ATaskList", ts.getTaskListsNames()[1]);
+		assertEquals("MiddleTaskList", ts.getTaskListsNames()[2]);
+		assertEquals("TaskList1", ts.getTaskListsNames()[3]);
+		assertEquals("ZZZTaskList", ts.getTaskListsNames()[4]);
+		assertEquals("ZZZTaskList", ts.getCurrentTaskList().getTaskListName());
+		try {
+			ts.editTaskList("Active Tasks");
+			fail();
+		} catch(IllegalArgumentException e) {
+			assertEquals("Invalid name.", e.getMessage());
+		}
+		try {
+			ts.editTaskList("MiddleTaskList");
+			fail();
+		} catch(IllegalArgumentException e) {
+			assertEquals("Invalid name.", e.getMessage());
+		}
+		try {
+			ts.editTaskList("ZZZTaskList");
+			fail();
+		} catch(IllegalArgumentException e) {
+			assertEquals("Invalid name.", e.getMessage());
+		}
 	}
 }

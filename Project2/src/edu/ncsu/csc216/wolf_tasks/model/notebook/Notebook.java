@@ -150,6 +150,9 @@ public class Notebook {
 	 * @param taskListName the taskListName to set for the currentTaskList
 	 */
 	public void editTaskList(String taskListName) {
+		if (taskListName == null || "".equals(taskListName.trim()) || "Active Tasks".equals(taskListName.trim())) {
+			throw new IllegalArgumentException("Invalid name.");
+		}
 		for(int i = 0; i < taskLists.size(); i++) {
 			if(taskListName.toLowerCase().equals(taskLists.get(i).getTaskListName().toLowerCase())) {
 				throw new IllegalArgumentException("Invalid name.");
