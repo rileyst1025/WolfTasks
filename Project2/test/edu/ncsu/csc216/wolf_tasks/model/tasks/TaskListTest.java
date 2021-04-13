@@ -17,18 +17,20 @@ public class TaskListTest {
 		assertEquals("name", tl.getTaskListName());
 		assertEquals(2, tl.getCompletedCount());
 		assertEquals(0, tl.getTasks().size());
+		TaskList itl = new TaskList("name", 2);
+		assertEquals(2, itl.getCompletedCount());
 		try {
-			TaskList itl = new TaskList("", 2);
+			itl = new TaskList("", 2);
 		} catch(IllegalArgumentException e) {
 			assertEquals("Invalid name.", e.getMessage());
 		}
 		try {
-			TaskList itl = new TaskList(null, 2);
+			itl = new TaskList(null, 2);
 		} catch(IllegalArgumentException e) {
 			assertEquals("Invalid name.", e.getMessage());
 		}
 		try {
-			TaskList itl = new TaskList("name", -2);
+			itl = new TaskList("name", -2);
 		} catch(IllegalArgumentException e) {
 			assertEquals("Invalid completed count.", e.getMessage());
 		}

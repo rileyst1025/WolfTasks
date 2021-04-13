@@ -38,26 +38,28 @@ public class TaskTest {
 		assertTrue(ar.isRecurring());
 		assertTrue(ar.isActive());
 		assertEquals("", ar.getTaskListName());
+		Task i = ar;
+		assertEquals("name", i.getTaskName());
 		try {
-			Task i = new Task("", "description", true, true);
+			i = new Task("", "description", true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
 			assertEquals("Incomplete task information", e.getMessage());
 		}
 		try {
-			Task i = new Task(null, "description", true, true);
+			i = new Task(null, "description", true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
 			assertEquals("Incomplete task information", e.getMessage());
 		}
 		try {
-			Task i = new Task("name", "", true, true);
+			i = new Task("name", "", true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
 			assertEquals("Incomplete task information", e.getMessage());
 		}
 		try {
-			Task i = new Task("name", null, true, true);
+			i = new Task("name", null, true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
 			assertEquals("Incomplete task information", e.getMessage());

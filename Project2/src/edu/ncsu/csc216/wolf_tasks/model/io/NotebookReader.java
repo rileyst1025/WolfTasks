@@ -45,9 +45,13 @@ public class NotebookReader {
 					for(int j = 1; j < taskTokens.length; j++) {
 						try {
 							processTask(rtn.getCurrentTaskList(), taskTokens[j]);
-						} catch(IllegalArgumentException x2) {}
+						} catch(IllegalArgumentException x2) {
+							//Skip line of code, invalid line
+						}
 					}
-				} catch(IllegalArgumentException x) {}
+				} catch(IllegalArgumentException x) {
+					//Skip line of code, invalid line
+				}
 			}
 			fileReader.close();
 		} catch(FileNotFoundException e) {

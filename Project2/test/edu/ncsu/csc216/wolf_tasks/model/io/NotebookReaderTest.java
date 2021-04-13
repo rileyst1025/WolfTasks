@@ -1,9 +1,6 @@
 package edu.ncsu.csc216.wolf_tasks.model.io;
 import static org.junit.Assert.*;
 import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-
 import org.junit.Test;
 import edu.ncsu.csc216.wolf_tasks.model.notebook.Notebook;
 

@@ -38,6 +38,7 @@ public class NotebookWriterTest {
 		Task task5 = new Task("Task5", "Task5Description", true, false);
 		tasks2.addTask(task5);
 		n.addTaskList(tasks2);
+		assertEquals("Notebook", n.getNotebookName());
 		n.saveNotebook(outputFile);
 		checkFiles("test-files/expected_out.txt", "test-files/actual_output.txt");
 	}
