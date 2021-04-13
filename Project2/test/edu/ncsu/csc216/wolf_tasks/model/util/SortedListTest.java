@@ -107,7 +107,7 @@ public class SortedListTest {
 		SortedList<String> s = new SortedList<String>();
 		try {
 			s.remove(0);
-		} catch(IllegalArgumentException e) {
+		} catch(IndexOutOfBoundsException e) {
 			assertEquals(0, s.size());
 		}
 		s.add("Apple");
@@ -137,12 +137,12 @@ public class SortedListTest {
 		assertEquals("Mango", s.get(1));
 		try {
 			s.remove(5);
-		} catch(IllegalArgumentException e) {
+		} catch(IndexOutOfBoundsException e) {
 			assertEquals(2, s.size());
 		}
 		try {
 			s.remove(-1);
-		} catch(IllegalArgumentException e) {
+		} catch(IndexOutOfBoundsException e) {
 			assertEquals(2, s.size());
 		}
 	}

@@ -77,7 +77,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	@Override
 	public E remove(int idx) {
 		if(idx < 0 || idx >= size || size == 0) {
-			throw new IllegalArgumentException("Invalid index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		if(idx == 0) {
 			E rtn = front.data;
@@ -136,7 +136,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	@Override
 	public E get(int idx) {
 		if(idx < 0 || idx >= size || size == 0) {
-			throw new IllegalArgumentException("Invalid index.");
+			throw new IndexOutOfBoundsException("Invalid index.");
 		}
 		ListNode current = front;
 		for(int i = 0; i < idx; i++) {
