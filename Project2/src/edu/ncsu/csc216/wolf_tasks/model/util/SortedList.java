@@ -29,7 +29,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	@Override
 	public void add(E element) {
 		if(element == null) {
-			throw new NullPointerException("Cannot add null element");
+			throw new NullPointerException("Cannot add null element.");
 		}
 		if(size == 0) {
 			ListNode addNode = new ListNode(element, null);
@@ -77,7 +77,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	@Override
 	public E remove(int idx) {
 		if(idx < 0 || idx >= size || size == 0) {
-			throw new IllegalArgumentException("Invalid Index");
+			throw new IllegalArgumentException("Invalid Index.");
 		}
 		if(idx == 0) {
 			E rtn = front.data;
@@ -136,7 +136,7 @@ public class SortedList<E extends Comparable<E>> implements ISortedList<E> {
 	@Override
 	public E get(int idx) {
 		if(idx < 0 || idx >= size || size == 0) {
-			throw new IllegalArgumentException("Invalid Index");
+			throw new IllegalArgumentException("Invalid Index.");
 		}
 		ListNode current = front;
 		for(int i = 0; i < idx; i++) {
