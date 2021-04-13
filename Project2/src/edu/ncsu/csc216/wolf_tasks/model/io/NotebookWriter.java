@@ -25,7 +25,7 @@ public class NotebookWriter {
 			for(int i = 0; i < taskLists.size(); i++) {
 				fileWriter.println("# " + taskLists.get(i).getTaskListName() + "," + taskLists.get(i).getCompletedCount());
 				for(int j = 0; j < taskLists.get(i).getTasks().size(); j++) {
-					fileWriter.println("* " + taskLists.get(i).getTask(j).toString());
+					fileWriter.println(taskLists.get(i).getTask(j).toString());
 				}
 			}
 			fileWriter.close();

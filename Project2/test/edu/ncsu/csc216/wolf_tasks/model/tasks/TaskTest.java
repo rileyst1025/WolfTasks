@@ -104,8 +104,8 @@ public class TaskTest {
 		Task t1 = new Task("name1", "description1", false, false);
 		Task t2 = new Task("name2", "description2", true, false);
 		Task t3 = new Task("name3", "description3", true, true);
-		assertEquals("name1\ndescription1", t1.toString());
-		assertEquals("name2,recurring\ndescription2", t2.toString());
-		assertEquals("name3,recurring,active\ndescription3", t3.toString());
+		assertEquals("* name1\ndescription1", t1.toString());
+		assertEquals("* name2,recurring\ndescription2", t2.toString());
+		assertEquals("* name3,recurring,active\ndescription3", t3.toString());
 	}
 }
