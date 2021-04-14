@@ -19,7 +19,7 @@ public class NotebookReader {
 	 * @return the Notebook created from the file information
 	 */
 	public static Notebook readNodebookFile(File filename) {
-		Notebook rtn;
+		Notebook rtn = new Notebook("placeholder");
 		try {
 			Scanner fileReader = new Scanner(filename);
 			String fileinfo = "";
