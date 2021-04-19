@@ -23,8 +23,10 @@ public class NotebookReaderTest {
 		File nonamelistFile = new File("test-files/notebook5.txt");
 		File noneglistFile = new File("test-files/notebook6.txt");
 		File invalidtaskFile = new File("test-files/notebook7.txt");
-		Notebook n = NotebookReader.readNodebookFile(nameonlyFile);
+		Notebook n = new Notebook("temp");
+		n = NotebookReader.readNodebookFile(nameonlyFile);
 		assertEquals("Summer Plans", n.getNotebookName());
+		n = new Notebook("temp");
 		n = NotebookReader.readNodebookFile(threelistFile);
 		assertEquals("School", n.getNotebookName());
 		assertEquals("CSC 216", n.getTaskListsNames()[1]);
@@ -41,6 +43,7 @@ public class NotebookReaderTest {
 		assertEquals(2, n.getCurrentTaskList().getTasks().size());
 		n.setCurrentTaskList("Active Tasks");
 		assertEquals(5, n.getCurrentTaskList().getTasks().size());
+		n = new Notebook("temp");
 		n = NotebookReader.readNodebookFile(missingitemsFile);
 		assertEquals("School", n.getNotebookName());
 		assertEquals("CSC 216", n.getTaskListsNames()[1]);
@@ -61,15 +64,19 @@ public class NotebookReaderTest {
 		} catch(IllegalArgumentException e) {
 			assertEquals("Unable to load file.", e.getMessage());
 		}
+		n = new Notebook("temp");
 		n = NotebookReader.readNodebookFile(nocountlistFile);
 		assertEquals("Personal", n.getNotebookName());
 		assertEquals(1, n.getTaskListsNames().length);
+		n = new Notebook("temp");
 		n = NotebookReader.readNodebookFile(nonamelistFile);
 		assertEquals("Personal", n.getNotebookName());
 		assertEquals(1, n.getTaskListsNames().length);
+		n = new Notebook("temp");
 		n = NotebookReader.readNodebookFile(noneglistFile);
 		assertEquals("Personal", n.getNotebookName());
 		assertEquals(1, n.getTaskListsNames().length);
+		n = new Notebook("temp");
 		n = NotebookReader.readNodebookFile(invalidtaskFile);
 		assertEquals("Personal", n.getNotebookName());
 		assertEquals("Habits", n.getTaskListsNames()[1]);
