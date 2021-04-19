@@ -53,12 +53,6 @@ public class TaskTest {
 			assertEquals("Incomplete task information.", e.getMessage());
 		}
 		try {
-			i = new Task("name", "", true, true);
-			fail();
-		} catch(IllegalArgumentException e) {
-			assertEquals("Incomplete task information.", e.getMessage());
-		}
-		try {
 			i = new Task("name", null, true, true);
 			fail();
 		} catch(IllegalArgumentException e) {
