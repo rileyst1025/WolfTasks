@@ -58,6 +58,7 @@ public class NotebookReader {
 		} catch(FileNotFoundException e) {
 			throw new IllegalArgumentException("Unable to load file.");
 		}
+		rtn.setCurrentTaskList("Active Tasks");
 		return rtn;
 	}
 	/**
